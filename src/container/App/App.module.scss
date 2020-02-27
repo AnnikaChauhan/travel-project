@@ -1,0 +1,26 @@
+.appHeader{
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  text-align: center;
+
+  h1{
+    font-size: 40px;
+  }
+
+}
+
+.navigation {
+  padding: 10px;
+  width: 150px;
+  height: 650px;
+  background-color: lightgrey;
+
+  ul {
+    list-style-type: none;
+
+    li{
+      padding: 5px;
+    }
+  }
+}
