@@ -5,13 +5,13 @@ function App() {
   return (
     <body>
       <header className={styles.appHeader}>
-        <h1>Travel Site By Annika</h1>
+        <h1>Travel</h1>
       </header>
       <nav className={styles.navigation}>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
           </ul>
         </nav>
     </body>
