@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from "./App.module.scss";
+import Header from "../../component/Header";
 
 function App() {
   return (
     <body>
-      <header className={styles.appHeader}>
-        <h1>Travel</h1>
-      </header>
+        <Header/>
       <nav className={styles.navigation}>
           <ul>
             <li><a href="">Home</a></li>
