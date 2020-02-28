@@ -4,7 +4,9 @@ import styles from "./Header.module.scss";
 class Header extends Component {
     render(){
         return(
-            <h1>Travel</h1>
+            <header className={styles.header}>
+                <h1>Travel</h1>
+            </header>
         );
     }
 }
