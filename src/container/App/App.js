@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from "./App.module.scss";
-import Header from "../../component/Header";
 import NavBar from '../../component/NavBar/NavBar';
+import Main from '../../component/Main/Main';
 
 function App() {
   return (
-    <body>
-        <Header/>
-        <NavBar/>
-    </body>
+    <main className={styles.content}>
+        <NavBar />
+        <Main />
+    </main>
   );
 }
 
