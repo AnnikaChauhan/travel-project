@@ -6,7 +6,7 @@ class NavBar extends Component {
         return (
             <nav className={styles.navigation}>
                 <div>
-                    
+                    {/* this is basically a filler to seperate the space correctly */}
                 </div>
                 <ul>
                     <li><a href="">Home</a></li>
