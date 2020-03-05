@@ -1,27 +1,3 @@
-.appHeader{
-  background-color: navy;
-  color: whitesmoke;
-  padding: 10px;
-  text-align: center;
-
-  h1{
-    font-size: 40px;
-  }
-}
-
-.navigation {
-  padding: 5px;
-  background-color: lightgrey;
-
-  ul {
-    list-style-type: none;
+.content {
     display: flex;
-    justify-content: space-evenly;
-
-    li a {
-      text-decoration: none;
-      color: navy;
-      font-weight: bold;
-    }
-  }
 }
