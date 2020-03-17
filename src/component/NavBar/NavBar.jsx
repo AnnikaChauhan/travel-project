@@ -12,6 +12,7 @@ class NavBar extends Component {
                     <li><a href="">Home</a></li>
                     <li><a href="">Profile</a></li>
                     <li><a href="">Flights</a></li>
+                    <li><a href="">Blogs</a></li>
                     <li><a href="">About</a></li>
                 </ul>
             </nav>
