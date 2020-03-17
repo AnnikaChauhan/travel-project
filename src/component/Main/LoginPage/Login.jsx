@@ -7,10 +7,12 @@ export default class Login extends Component {
         return(
             <div className={styles.login}>
                 <h2>Welcome!</h2>
-                <p>Sign in for quick and easy access to your account via Google.</p>
                 <div>
+                    <p>Sign in via Google for quick and easy access to your account.</p>
                     <Button text={'Sign in with Google'} />
                 </div>
+                {/* <p>Alternatively, sign up directly for an account by providing an email address and password.</p> */}
+                {/* inputs and sign up button */}
             </div>
         );
     }
