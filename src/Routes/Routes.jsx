@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router, Redirect, globalHistory } from "@reach/router";
 import AboutPage from "../component/Main/AboutPage/AboutPage";
 import Login from "../component/Main/LoginPage/Login";
+import PrivateRoutes from "../Routes/PrivateRoutes";
 import firebase from "../firebase";
 
 export default class Routes extends Component {
@@ -14,19 +15,17 @@ export default class Routes extends Component {
         }
     }
 
-    login = () =>{
-        console.log("loggin in");
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-            console.log('logged in')
+    login = () => {
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((result) => {
+            console.log(result.user);
         }).catch((error) => {
             console.log(error);
         })
     }
 
-    signup = () =>{
-        console.log("signin up");
-        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-
+    signup = () => {
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((result) => {
+            console.log(result.user);
         }).catch((error) => {
             console.log(error);
         })
@@ -36,16 +35,10 @@ export default class Routes extends Component {
         firebase.auth().signOut();
     }
 
-    componentDidMount(){
-        this.authListener();
-    }
-
     authListener(){
         firebase.auth().onAuthStateChanged((user) => {
-            console.log(user);
             if(user){
                 this.setState({user});
-                //retrives the uid
                 //localStorage.setItem('user', user.uid);
             } else {
                 this.setState({user: null});
@@ -55,8 +48,12 @@ export default class Routes extends Component {
     }
 
     handleChange = (e) => {
-        console.log("changin");
+       //console.log("changin");
         this.setState({ [e.target.name] : e.target.value });
+    }
+
+    componentDidMount(){
+        this.authListener();
     }
 
     render(){
@@ -73,7 +70,10 @@ export default class Routes extends Component {
                     logout={this.logout}
                     user={this.state.user}
                 />
-                <AboutPage path="about" />
+                <PrivateRoutes path="private" user={this.state.user}>
+                    {/* everything, blogs & flights should be contained inside private for NOW, the only thing outside is the about page */}
+                    <AboutPage path="about" />
+                </PrivateRoutes>
             </Router>
         );
     }
