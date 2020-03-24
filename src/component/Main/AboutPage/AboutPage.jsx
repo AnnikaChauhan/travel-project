@@ -1,39 +1,20 @@
 import React, { Component } from "react";
-import "./AboutPage.module.scss";
+import styles from "./AboutPage.module.scss";
+import Header from "../../Utilities/Header";
 
 export default class TestPara extends Component {
     render() {
         return (
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae iusto dicta numquam libero aspernatur nulla maiores dolore enim. Nostrum dicta iusto officia corporis, assumenda illo vel aliquid. Labore, consequatur enim?</p>
+            <div className={styles.aboutPage}>
+                <Header hOne={'Thank you for using Explorer!'} hTwo={'Learn more about us...'} />
+                <p>This app was built by an aspiring developer to test myself and the skills I have learnt on the _nology course.</p>
+                <p>
+                    Please note that this app is a work in progress and new features will be added as I learn new skills! You can access the code on  
+                        <a href="https://github.com/AnnikaChauhan/travel-project" target="_blank"> Github </a> 
+                     and see my other work on my personal website 
+                        <a href="www.annikachauhan.com" target="_blank"> www.annikachauhan.com</a>.
+                </p>
+                <p>How to use:</p>
             </div>
         );
     }

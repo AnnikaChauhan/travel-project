@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Router, Redirect, globalHistory } from "@reach/router";
 import AboutPage from "../component/Main/AboutPage/AboutPage";
-import Login from "../component/Main/LoginPage/Login";
+import HomeLoginPage from "../component/Main/HomeLoginPage";
+import BlogsPage from "../component/Main/BlogsPage";
+import CreateNewBlogPost from "../component/Main/CreateNewBlogPost";
+
 import PrivateRoutes from "../Routes/PrivateRoutes";
-import firebase from "../firebase";
+import firebase, {firestore} from "../firebase";
 
 export default class Routes extends Component {
     constructor(props){
@@ -11,7 +14,11 @@ export default class Routes extends Component {
         this.state = {
             user: null,
             email: '',
-            password: ''
+            password: '',
+            userFormData: {
+                uid: '',
+                email: ''
+            }
         }
     }
 
@@ -23,9 +30,18 @@ export default class Routes extends Component {
         })
     }
 
+    //can sign up push data into the users database??
     signup = () => {
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((result) => {
-            console.log(result.user);
+            firestore
+                .collection("users")
+                .add({
+                    email: this.state.email,
+                    userUID: result.user.uid
+                })
+                .then(() => {
+                    console.log('this user has also been added to the database');
+                })
         }).catch((error) => {
             console.log(error);
         })
@@ -33,6 +49,10 @@ export default class Routes extends Component {
 
     logout = () => {
         firebase.auth().signOut();
+    }
+
+    addUserToUserDatabase(){
+
     }
 
     authListener(){
@@ -60,7 +80,7 @@ export default class Routes extends Component {
         return(
             <Router>
                 <Redirect noThrow from="/" to="/home" />
-                <Login 
+                <HomeLoginPage 
                     path="/home"
                     email={this.state.email}
                     password={this.state.password}
@@ -70,9 +90,17 @@ export default class Routes extends Component {
                     logout={this.logout}
                     user={this.state.user}
                 />
+                <AboutPage path="about" />
                 <PrivateRoutes path="private" user={this.state.user}>
                     {/* everything, blogs & flights should be contained inside private for NOW, the only thing outside is the about page */}
-                    <AboutPage path="about" />
+                    <BlogsPage
+                        path="blogs" 
+                        user={this.state.user}
+                     />
+                     <CreateNewBlogPost
+                        path="blogs/new"
+                        user={this.state.user}
+                     />
                 </PrivateRoutes>
             </Router>
         );

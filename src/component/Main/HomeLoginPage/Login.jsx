@@ -10,11 +10,11 @@ export default class Login extends Component {
     render() {
         return (
             <div className={styles.login}>
-                <Header text={'Explorer'} />
+                <Header hOne={'Explorer'} hTwo={'The place for travel inspiration.'} />
                 <div>
                     {
                         this.props.user
-                            ? (<h2>Welcome {this.props.user.email}!</h2>)
+                            ? (<h3>Welcome {this.props.user.email}!</h3>)
                             : (<div>
                                     <h2>Welcome!</h2>
                                     <p>Sign in or sign up to access content.</p>

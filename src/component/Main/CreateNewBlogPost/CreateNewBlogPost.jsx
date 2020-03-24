@@ -1,0 +1,64 @@
+import React, {Component} from "react";
+import styles from "./CreateNewBlogPost.module.scss";
+import Header from "../../Utilities/Header";
+import Button from "../../Utilities/Button";
+
+import {firestore} from "../../../firebase";
+
+export default class CreateNewBlogPost extends Component {
+    state = {
+        formData: {
+            post: "",
+            countryVisited: ""
+        }
+    }
+
+    handleInputChange = (event) => {
+        this.setState({
+            formData: {
+                ...this.state.formData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        firestore
+            .collection("blogs")
+            .add({
+                ...this.state.formData,
+                createdBy: this.props.user.uid
+            })
+            .then(() => {
+                console.log('form submitted');
+            })
+    }
+
+    render(){
+        return(
+            <section className={styles.createPost}>
+                <Header hOne={'Create a New Post'} hTwo={'Add a new blog post to your collection!'} />
+                <form onSubmit={this.handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Your Blog Post"
+                    name="post"
+                    value={this.state.formData.name}
+                    onChange={this.handleInputChange}
+                />
+                <br/>
+                <input
+                    type="text"
+                    placeholder="Country Visited"
+                    name="countryVisited"
+                    value={this.state.formData.countryVisited}
+                    onChange={this.handleInputChange}
+                />
+                <br/>
+                <input type="submit" value="Submit" />
+                </form>
+            </section>
+        );
+    }
+}

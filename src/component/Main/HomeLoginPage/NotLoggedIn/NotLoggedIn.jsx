@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import Button from "../../../Utilities/Button"
+
+//regex to find the @'s and stuff
 
 export default class NotLoggedIn extends Component {
     render(){
@@ -25,8 +28,8 @@ export default class NotLoggedIn extends Component {
                 <small>Don't worry, we won't share your details.</small>
                 <br/>
                 <div>
-                    <button onClick={this.props.login}>Login</button>
-                    <button onClick={this.props.signup}>Signup</button>
+                    <Button text={'Login'} handleClick={this.props.login} />
+                    <Button text={'Sign Up'} handleClick={this.props.signup} />
                 </div>
             </div>
             

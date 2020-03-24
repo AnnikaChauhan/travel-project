@@ -2,9 +2,17 @@
 
 .header {
     color: $dark-blue;
-    font-size: 25px;
     height: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
 }
