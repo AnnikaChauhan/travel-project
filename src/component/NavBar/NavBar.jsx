@@ -10,10 +10,10 @@ class NavBar extends Component {
                     {/* this is basically a filler to seperate the space correctly */}
                 </div>
                 <ul>
-                    <NavItem route="/" name="Home"/>
+                    <NavItem route="/home" name="Home"/>
                     <NavItem route="/flights" name="Flights" />
                     <NavItem route="/blogs" name="Blogs" />
-                    <NavItem route="/private/myprofile" name="My Profile" />
+                    <NavItem route="/private/me/*" name="My Account" />
                     <NavItem route="/about" name="About" />
                 </ul>
             </nav>

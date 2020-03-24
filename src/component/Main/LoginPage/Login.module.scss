@@ -1,2 +1,32 @@
 @import "../../../variables.scss";
 
+.login {
+    text-align: center;
+
+    div {
+        div:nth-child(2){
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        input{
+            height: 40px;
+            width: 90%;
+            border-radius: 5px;
+            border: 2px solid lightgrey;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .login {
+        div{
+            input{
+                width: 400px;
+            }
+        }
+    }
+}

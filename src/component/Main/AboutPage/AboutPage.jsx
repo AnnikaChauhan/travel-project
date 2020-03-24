@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./TestPara.module.scss";
+import "./AboutPage.module.scss";
 
 export default class TestPara extends Component {
     render() {

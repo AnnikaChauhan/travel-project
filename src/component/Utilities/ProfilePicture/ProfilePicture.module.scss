@@ -1,0 +1,10 @@
+//make it 100% so that it can go into a square container 
+
+@import "../../../variables.scss";
+
+img {
+    border: 5px solid $dark-blue;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
