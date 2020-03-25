@@ -10,6 +10,7 @@ export default class UserBlogs extends Component {
         allOtherBlogs: []
     }
 
+    //can I do a component did mount for several databases at the same time?
     //theres a bug in this with that condition of < or > not showing certain results
     componentDidMount() {
         firestore
@@ -22,6 +23,7 @@ export default class UserBlogs extends Component {
                     allBlogs: blogs,
                     allOtherBlogs: blogs
                 });
+                
             })
     }
 

@@ -11,7 +11,7 @@ export default class BlogsPage extends Component {
             <section className={styles.blogsPage}>
                 <Header hOne={"Blogs by Explorers"} hTwo={"Read about other Explorer's travels, or write about your own!"} />
                 <hr/>
-                <h3>My Blogs</h3>
+                <h3>Your Blogs</h3>
                 <div>
                     <UserBlogs user={this.props.user} />
                 </div>

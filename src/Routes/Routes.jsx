@@ -3,6 +3,7 @@ import { Router, Redirect, globalHistory } from "@reach/router";
 import AboutPage from "../component/Main/AboutPage/AboutPage";
 import HomeLoginPage from "../component/Main/HomeLoginPage";
 import BlogsPage from "../component/Main/BlogsPage";
+import SearchPage from "../component/Main/SearchPage";
 import CreateNewBlogPost from "../component/Main/CreateNewBlogPost";
 
 import PrivateRoutes from "../Routes/PrivateRoutes";
@@ -15,6 +16,7 @@ export default class Routes extends Component {
             user: null,
             email: '',
             password: '',
+            usersCollection: null,
             userFormData: {
                 uid: '',
                 email: ''
@@ -30,7 +32,6 @@ export default class Routes extends Component {
         })
     }
 
-    //can sign up push data into the users database??
     signup = () => {
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((result) => {
             firestore
@@ -51,14 +52,14 @@ export default class Routes extends Component {
         firebase.auth().signOut();
     }
 
-    addUserToUserDatabase(){
-
-    }
-
     authListener(){
         firebase.auth().onAuthStateChanged((user) => {
             if(user){
                 this.setState({user});
+                // firestore
+                //     .collection("users")
+
+                // also make a firebase request for users collection 
                 //localStorage.setItem('user', user.uid);
             } else {
                 this.setState({user: null});
@@ -90,8 +91,9 @@ export default class Routes extends Component {
                     logout={this.logout}
                     user={this.state.user}
                 />
+                <SearchPage path="search" />
                 <AboutPage path="about" />
-                <PrivateRoutes path="private" user={this.state.user}>
+                <PrivateRoutes path="private" user={this.state.user} >
                     {/* everything, blogs & flights should be contained inside private for NOW, the only thing outside is the about page */}
                     <BlogsPage
                         path="blogs" 

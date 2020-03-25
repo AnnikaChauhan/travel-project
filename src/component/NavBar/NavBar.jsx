@@ -13,7 +13,7 @@ class NavBar extends Component {
                     <NavItem route="/home" name="Home"/>
                     <NavItem route="private/blogs" name="Blogs" />
                     <NavItem route="private/blogs/new" name="New Post" />
-                    <NavItem route="/flights" name="Flights" />
+                    <NavItem route="/search" name="Search" />
                     {/* <NavItem route="/private/me" name="My Account" /> */}
                     <NavItem route="/about" name="About" />
                 </ul>

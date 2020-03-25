@@ -25,6 +25,8 @@ export default class CreateNewBlogPost extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         firestore
+            .collection("users")
+            .doc(this.props.user.uid)
             .collection("blogs")
             .add({
                 ...this.state.formData,
@@ -36,6 +38,7 @@ export default class CreateNewBlogPost extends Component {
     }
 
     render(){
+        console.log(this.props.user);
         return(
             <section className={styles.createPost}>
                 <Header hOne={'Create a New Post'} hTwo={'Add a new blog post to your collection!'} />
