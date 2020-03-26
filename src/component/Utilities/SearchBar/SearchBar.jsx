@@ -1,7 +1,22 @@
 import React, {Component} from "react";
+import styles from "./SearchBar.module.scss";
 
 export default class SearchBar extends Component {
     render(){
-        return();
+        return(
+            <div className={styles.searchbar}>
+                <input 
+                    type="text" 
+                    name="search" 
+                    id="search"
+                    placeholder={this.props.placeholder}
+                    value={this.props.value}
+                    onChange={this.props.handleChange}
+                />
+                <button 
+                    type="submit">
+                        Search</button>
+            </div>
+        );
     }
 }

@@ -1,0 +1,23 @@
+@import "../../../variables.scss";
+
+.searchbar {
+    height: 40px;
+    padding: 2px;
+    text-align: center;
+
+    input{
+        height: 100%;
+        width: 100%;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .searchbar {
+        input{
+            width: 60%;
+        }
+    }
+}

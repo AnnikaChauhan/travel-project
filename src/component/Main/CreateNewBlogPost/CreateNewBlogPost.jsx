@@ -38,7 +38,7 @@ export default class CreateNewBlogPost extends Component {
     }
 
     render(){
-        console.log(this.props.user);
+        //console.log(this.props.user);
         return(
             <section className={styles.createPost}>
                 <Header hOne={'Create a New Post'} hTwo={'Add a new blog post to your collection!'} />

@@ -16,7 +16,7 @@ export default class BlogsPage extends Component {
                     <UserBlogs user={this.props.user} />
                 </div>
                 <hr/>
-                <h3>Blogs by all Explorer's</h3>
+                <h3>Blogs by all Explorers</h3>
                 <div>
                     <PublicBlogs user={this.props.user} />
                 </div>
