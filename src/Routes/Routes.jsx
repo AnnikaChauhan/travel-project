@@ -91,7 +91,7 @@ export default class Routes extends Component {
                     logout={this.logout}
                     user={this.state.user}
                 />
-                <SearchPage path="search" />
+                <SearchPage path="explore" />
                 <AboutPage path="about" />
                 <PrivateRoutes path="private" user={this.state.user} >
                     {/* everything, blogs & flights should be contained inside private for NOW, the only thing outside is the about page */}

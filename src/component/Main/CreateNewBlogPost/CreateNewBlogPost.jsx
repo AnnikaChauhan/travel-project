@@ -22,17 +22,23 @@ export default class CreateNewBlogPost extends Component {
         })
     }
 
+    //the commented out bit is for when you want to make blogs a subcollection of users, once you figure out how to extract all/call the relevant userID
     handleSubmit = (event) => {
         event.preventDefault();
         firestore
-            .collection("users")
-            .doc(this.props.user.uid)
+            // .collection("users")
+            // .doc(this.props.user.uid)
             .collection("blogs")
             .add({
                 ...this.state.formData,
                 createdBy: this.props.user.uid
             })
             .then(() => {
+                this.setState({
+                    post: "",
+                    countryVisited: ""
+                })
+
                 console.log('form submitted');
             })
     }

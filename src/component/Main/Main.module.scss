@@ -1,9 +1,10 @@
 @import "../../variables.scss";
 
 .main {
+    // border: 1px solid red;
     width: 100%;
 
     h2, h3, h4, p {
-        margin: 10px;
+        margin: 10px 0;
     }
 }

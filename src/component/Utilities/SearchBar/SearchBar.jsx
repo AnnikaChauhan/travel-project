@@ -14,8 +14,10 @@ export default class SearchBar extends Component {
                     onChange={this.props.handleChange}
                 />
                 <button 
-                    type="submit">
-                        Search</button>
+                    type="submit"
+                    onClick={this.props.handleClick}
+                >
+                Search</button>
             </div>
         );
     }
