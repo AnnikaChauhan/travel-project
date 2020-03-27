@@ -11,9 +11,8 @@ class NavBar extends Component {
                 </div>
                 <ul>
                     <NavItem route="/home" name="Home"/>
-                    <NavItem route="private/blogs" name="Blogs" />
-                    <NavItem route="private/blogs/new" name="New Post" />
-                    <NavItem route="/explore" name="Explore" />
+                    <NavItem route="explorer/blogs" name="Blogs" />
+                    <NavItem route="explorer/explore" name="Explore" />
                     <NavItem route="/about" name="About" />
                 </ul>
             </nav>

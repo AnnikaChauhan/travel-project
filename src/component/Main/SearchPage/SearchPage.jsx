@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "../../Utilities/Header";
 import SearchBar from "../../Utilities/SearchBar"
+import Weather from "./Weather";
+import Venues from "./Venues"
 
 export default class SearchPage extends Component {
     state = {
@@ -12,24 +14,11 @@ export default class SearchPage extends Component {
         },
         fourSquare: {
             FSqBaseURL: "https://api.foursquare.com/v2/venues",
+            FSsearchLimit: "50",
             FSclientID: "1UDUJRGAW503KCQO4VFBGGIRLVBGCWQZ0STNBEUWN4FITBAZ",
             FSclientSecret: "2JFKN3CQJYUJL35QINN1LLU0WO3ODJXHR5QALFTOMQ5D3VVY",
             FSversion: "20200229",
-            venueData: "",
-            fakeVenueData: [
-                {
-                    venue: "The Shard",
-                    prices: "high"
-                },
-                {
-                    venue: "Sushi Samba",
-                    prices: "not bad"
-                },
-                {
-                    venue: "TGI Fridays",
-                    prices: "cheap af"
-                }
-            ]
+            venueData: []
         }
     }
 
@@ -49,7 +38,7 @@ export default class SearchPage extends Component {
     }
 
     fetchFourSquareData() {
-        let fourSquareURL = `${this.state.fourSquare.FSqBaseURL}/explore?near=${this.state.citySearch}&limit=10&client_id=${this.state.fourSquare.FSclientID}&client_secret=${this.state.fourSquare.FSclientSecret}&v=${this.state.fourSquare.FSversion}`;
+        let fourSquareURL = `${this.state.fourSquare.FSqBaseURL}/explore?near=${this.state.citySearch}&limit=${this.state.fourSquare.FSsearchLimit}&client_id=${this.state.fourSquare.FSclientID}&client_secret=${this.state.fourSquare.FSclientSecret}&v=${this.state.fourSquare.FSversion}`;
         fetch(fourSquareURL)
             .then(response => response.json())
             .then(data => {
@@ -64,12 +53,6 @@ export default class SearchPage extends Component {
             .catch(error => console.log(error));
     }
 
-    renderVenues = () => {
-        this.state.fourSquare.venueData.forEach((venue) => {
-            return <p>lol</p>;
-        })
-     }
-
     handleChange = (e) => {
         this.setState({ citySearch: e.target.value });
     }
@@ -81,17 +64,18 @@ export default class SearchPage extends Component {
     }
 
     render() {
-        //console.log(this.state.openWeather.weatherData.coord);
         console.log(this.state.fourSquare.venueData);
         return (
             <section>
                 <Header hOne={'Search where to Explore'} hTwo={'Find the weather and local attractions in a city of your choice.'} />
-                <SearchBar
-                    placeholder={'Search a location here'}
-                    value={this.state.citySearch}
-                    handleChange={this.handleChange}
-                    handleClick={this.handleClick}
-                />
+                <div>
+                    <SearchBar
+                        placeholder={'Search a location here'}
+                        value={this.state.citySearch}
+                        handleChange={this.handleChange}
+                        handleClick={this.handleClick}
+                    />
+                </div>
                 {
                     !this.state.openWeather.weatherData
                         ? <p>Search using the search bar to receive exciting information!</p>
@@ -113,22 +97,12 @@ export default class SearchPage extends Component {
                         </article>
 
                 }
-                {
-                    !this.state.fourSquare.venueData
-                        ? <p></p>
-                        :   <article>
-                                <p><b>Your search has returned {this.state.fourSquare.venueData.length} results, but goodluck understanding thb tho lol</b></p>
-                                <p>{JSON.stringify(this.state.fourSquare.venueData)}</p>
-                            </article>
-                        
-                }
-                {
-                    !this.state.fourSquare.venueData
-                        ? <p></p>
-                        : this.state.fourSquare.venueData.forEach((venue) => {
-                            return <p>lol</p>
-                        })
-                }
+                { this.state.fourSquare.venueData.map((venue, index) => {
+                            return <p key={index}>{venue.venue.name}</p>
+                })}
+                <Weather />
+                <Venues />
+                <p>This is the end of the page</p>
             </section>
         );
     }

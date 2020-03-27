@@ -4,7 +4,8 @@ import AboutPage from "../component/Main/AboutPage/AboutPage";
 import HomeLoginPage from "../component/Main/HomeLoginPage";
 import BlogsPage from "../component/Main/BlogsPage";
 import SearchPage from "../component/Main/SearchPage";
-import CreateNewBlogPost from "../component/Main/CreateNewBlogPost";
+import CreateNewBlogPost from "../component/Main/BlogsPage/CreateNewBlogPost";
+import NotFound from "../component/Main/NotFound";
 
 import PrivateRoutes from "../Routes/PrivateRoutes";
 import firebase, {firestore} from "../firebase";
@@ -91,9 +92,8 @@ export default class Routes extends Component {
                     logout={this.logout}
                     user={this.state.user}
                 />
-                <SearchPage path="explore" />
                 <AboutPage path="about" />
-                <PrivateRoutes path="private" user={this.state.user} >
+                <PrivateRoutes path="explorer" user={this.state.user} >
                     {/* everything, blogs & flights should be contained inside private for NOW, the only thing outside is the about page */}
                     <BlogsPage
                         path="blogs" 
@@ -103,7 +103,9 @@ export default class Routes extends Component {
                         path="blogs/new"
                         user={this.state.user}
                      />
+                    <SearchPage path="explore" />
                 </PrivateRoutes>
+                <NotFound default />
             </Router>
         );
     }
