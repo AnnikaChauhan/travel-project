@@ -3,9 +3,21 @@ import "./NavItem.module.scss";
 import {Link} from "@reach/router";
 
 export default class NavItem extends Component {
-    render(){
+    
+    render(props){
         return(
-            <Link to={this.props.route}>{this.props.name}</Link>
+            <Link 
+            {...props}
+            getProps={ ({ isCurrent }) => {
+                return {
+                    style: {
+                        color: isCurrent ? "white" : "#231C42" 
+                    }
+                }
+            } }
+            to={this.props.route}>
+                {this.props.name}
+            </Link>
         );
     }
 }

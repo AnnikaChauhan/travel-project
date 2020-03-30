@@ -7,6 +7,7 @@ import {firestore} from "../../../../firebase";
 export default class UserBlogs extends Component {
     state = {
         myBlogs: []
+        
     }
 
     componentDidMount(){

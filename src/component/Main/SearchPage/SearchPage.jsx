@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../Utilities/Header";
 import SearchBar from "../../Utilities/SearchBar"
 import Weather from "./Weather";
-import Venues from "./Venues"
+import Venues from "./Venues";
 
 export default class SearchPage extends Component {
     state = {
@@ -21,13 +21,13 @@ export default class SearchPage extends Component {
             venueData: []
         }
     }
+    //push all categories into a SET and then display the different categories along the top - with the ability to filter by category
 
     fetchWeatherSearchResults = () => {
         let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${this.state.openWeather.openWeatherKey}`;
         fetch(weatherUrl)
             .then(response => response.json())
             .then((weatherData) => {
-                //console.log(weatherData);
                 this.setState({
                     openWeather: {
                         weatherData
@@ -43,7 +43,6 @@ export default class SearchPage extends Component {
             .then(response => response.json())
             .then(data => {
                 let venueData = data.response.groups[0].items;
-                //console.log(data.response.groups[0].items);
                 this.setState({
                     fourSquare: {
                         venueData
@@ -60,11 +59,10 @@ export default class SearchPage extends Component {
     handleClick = () => {
         this.fetchWeatherSearchResults();
         this.fetchFourSquareData();
-        //this.setState({ citySearch: "" });
     }
 
     render() {
-        console.log(this.state.fourSquare.venueData);
+        //console.log(this.state.fourSquare.venueData);
         return (
             <section>
                 <Header hOne={'Search where to Explore'} hTwo={'Find the weather and local attractions in a city of your choice.'} />
@@ -79,30 +77,9 @@ export default class SearchPage extends Component {
                 {
                     !this.state.openWeather.weatherData
                         ? <p>Search using the search bar to receive exciting information!</p>
-                        : <article>
-                            <h4>Search results for: {this.state.openWeather.weatherData.name}</h4>
-                            <p>
-                                Today's forecast is {this.state.openWeather.weatherData.weather[0].description}
-                                <br/>
-                                current temperature is {this.state.openWeather.weatherData.main.temp} degrees something (prob fareheit?)
-                                <br/>
-                                but it feels like {this.state.openWeather.weatherData.main.feels_like} degrees something
-                                <br/>
-                                with temperature highs of {this.state.openWeather.weatherData.main.temp_max} degrees something
-                                <br/>
-                                & lows of {this.state.openWeather.weatherData.main.temp_min} degrees something
-                            </p>
-                            {/* do sunrise and sunset at some point when u understand date */}
-                            {/* <p>{JSON.stringify(this.state.openWeather.weatherData)}</p> */}
-                        </article>
-
+                        : <Weather weatherData={this.state.openWeather.weatherData} />
                 }
-                { this.state.fourSquare.venueData.map((venue, index) => {
-                            return <p key={index}>{venue.venue.name}</p>
-                })}
-                <Weather />
-                <Venues />
-                <p>This is the end of the page</p>
+                <Venues venueData={this.state.fourSquare.venueData} />
             </section>
         );
     }

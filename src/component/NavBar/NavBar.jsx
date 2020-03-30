@@ -12,7 +12,7 @@ class NavBar extends Component {
                 <ul>
                     <NavItem route="/home" name="Home"/>
                     <NavItem route="explorer/blogs" name="Blogs" />
-                    <NavItem route="explorer/explore" name="Explore" />
+                    <NavItem route="explorer/explores" name="Explore" />
                     <NavItem route="/about" name="About" />
                 </ul>
             </nav>

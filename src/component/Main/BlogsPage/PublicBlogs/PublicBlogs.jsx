@@ -27,7 +27,20 @@ export default class UserBlogs extends Component {
             })
     }
 
+    getEmailAddresses = () => {
+        firestore
+            .collection("users")
+            .where("uid", "==", this.props.user.uid)
+            .get()
+            .then((result) => {
+                const users = result.docs.map(doc => doc.data());
+                const email = users[0].email;
+                //console.log(email)
+            })
+    }
+
     filteredBlogs(){
+        //this doesn't work lol
         let allOtherBlogs = this.state.allBlogs.filter((blog) => {
             return blog.createdBy.includes(this.props.user.uid);
         })
@@ -36,6 +49,7 @@ export default class UserBlogs extends Component {
 
     render() {
         //this.filteredBlogs();
+        this.getEmailAddresses()
         return (
             <section className={styles.publicBlogs} >
                 {this.state.allOtherBlogs.map((blog, index) => (

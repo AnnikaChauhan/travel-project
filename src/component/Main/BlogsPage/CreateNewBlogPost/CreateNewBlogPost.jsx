@@ -1,9 +1,8 @@
 import React, {Component} from "react";
 import styles from "./CreateNewBlogPost.module.scss";
 import Header from "../../../Utilities/Header";
-import Button from "../../../Utilities/Button";
 
-import {firestore} from "../../../../firebase";
+import { firestore } from "../../../../firebase";
 
 export default class CreateNewBlogPost extends Component {
     state = {

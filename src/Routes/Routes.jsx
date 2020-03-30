@@ -103,7 +103,7 @@ export default class Routes extends Component {
                         path="blogs/new"
                         user={this.state.user}
                      />
-                    <SearchPage path="explore" />
+                    <SearchPage path="explores" />
                 </PrivateRoutes>
                 <NotFound default />
             </Router>
