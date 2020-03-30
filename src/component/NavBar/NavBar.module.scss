@@ -2,6 +2,7 @@
 
 .navigation{
   position: relative;
+  background-color: $dark-blue;
 
   div {
     height: 5vh;
@@ -11,11 +12,11 @@
     position: fixed;
     top: 0;
     height: 5vh;
-    width: 100vw;
-    background-color: $mustard;
+    width: 100%;
+    background-color: $dark-blue;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     list-style-type: none;
   }

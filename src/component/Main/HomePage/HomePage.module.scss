@@ -26,6 +26,10 @@
     justify-content: center;
     margin-bottom: 20px;
     width: 400px;
+
+    a:hover{
+        color: $mustard;
+    }
 }
 
 @media screen and (min-width: 768px) {

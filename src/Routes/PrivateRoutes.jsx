@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import {Component} from "react";
 import {globalHistory} from "@reach/router";
 
 export default class PrivateRoutes extends Component {

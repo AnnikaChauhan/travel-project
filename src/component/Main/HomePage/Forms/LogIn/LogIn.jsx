@@ -12,7 +12,7 @@ export default class LogIn extends Component {
                     type="email"
                     name="email"
                     placeholder="Email Address"
-                    id="email"
+                    id="emailLI"
                     value={this.props.email}
                     onChange={this.props.handleChange}
                 />
@@ -21,7 +21,7 @@ export default class LogIn extends Component {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    id="password"
+                    id="passwordLI"
                     value={this.props.password}
                     onChange={this.props.handleChange}
                 />

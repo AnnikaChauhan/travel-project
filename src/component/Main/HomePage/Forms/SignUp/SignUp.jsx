@@ -12,7 +12,7 @@ export default class SignUp extends Component {
                     type="email"
                     name="email"
                     placeholder="Email Address"
-                    id="email"
+                    id="emailSU"
                     value={this.props.email}
                     onChange={this.props.handleChange}
                 />
@@ -21,7 +21,7 @@ export default class SignUp extends Component {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    id="password"
+                    id="passwordSU"
                     value={this.props.password}
                     onChange={this.props.handleChange}
                 />

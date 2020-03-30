@@ -27,7 +27,7 @@ export default class Blog extends Component {
         //this.getEmailAddresses();
         return(
             <article className={styles.blog}>
-                <p>{this.state.blogData.email}</p>
+                <h4>{this.state.blogData.email}</h4>
                 <h4>Visited: {this.state.blogData.countryVisited}</h4>
                 <p>Thoughts: {this.state.blogData.post}</p>
             </article>

@@ -10,7 +10,7 @@ export default class TestPara extends Component {
                 <p>This app was built by an aspiring developer to test myself and the skills I have learnt on the _nology course.</p>
                 <p>
                     Please note that this app is a work in progress and new features will be added as I learn new skills! You can access the code on  
-                        <a href="https://github.com/AnnikaChauhan/travel-project" target="_blank"> Github </a> 
+                        <a href="https://github.com/AnnikaChauhan/travel-project" target="_blank"> GitHub </a> 
                      and see my other work on my personal website 
                         <a href="www.annikachauhan.com" target="_blank"> www.annikachauhan.com</a>.
                 </p>

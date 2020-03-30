@@ -11,7 +11,7 @@ export default class NavItem extends Component {
             getProps={ ({ isCurrent }) => {
                 return {
                     style: {
-                        color: isCurrent ? "white" : "#231C42" 
+                        color: isCurrent ? "#E1AD01" : "white" 
                     }
                 }
             } }

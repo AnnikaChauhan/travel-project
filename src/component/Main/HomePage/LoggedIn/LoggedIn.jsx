@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../HomePage.module.scss"
+import styles from "../HomePage.module.scss";
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import LogIn from "../Forms/LogIn";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, Redirect, globalHistory } from "@reach/router";
+import { Router, Redirect } from "@reach/router";
 import AboutPage from "../component/Main/AboutPage/AboutPage";
 import HomePage from "../component/Main/HomePage";
 import BlogsPage from "../component/Main/BlogsPage";
@@ -27,7 +27,7 @@ export default class Routes extends Component {
 
     login = () => {
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((result) => {
-            console.log(result.user);
+            return result.user;
         }).catch((error) => {
             console.log(error);
         })
