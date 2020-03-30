@@ -1,15 +1,15 @@
 @import "../../../variables.scss";
 
-.login {
+.home {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    
+    
 
     div {
-        div:nth-child(2){
-            height: 200px;
-            width: 200px;
-            margin: 0 auto;
-        }
-
         input{
             height: 40px;
             width: 90%;
@@ -21,8 +21,15 @@
     }
 }
 
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
 @media screen and (min-width: 768px) {
-    .login {
+    .home {
         div{
             input{
                 width: 400px;

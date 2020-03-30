@@ -4,18 +4,22 @@ import { firestore } from "../../../firebase";
 
 export default class Blog extends Component {
     state = {
-        users: []
+        blogData: {}
     }
 
-    getEmailAddresses = () => {
+    componentDidMount() {
         firestore
             .collection("users")
             .where("uid","==",this.props.blogData.createdBy)
             .get()
             .then((result) => {
-                const emailAddress = result.docs.map(doc => doc.data())[0].email;
-                console.log(emailAddress);
-                return (<p>{emailAddress}</p>)
+                const email = result.docs[0].data().email
+                this.setState({ 
+                    blogData: {
+                        ...this.props.blogData,
+                        email
+                    }
+                 })
             })
     }
 
@@ -23,11 +27,9 @@ export default class Blog extends Component {
         //this.getEmailAddresses();
         return(
             <article className={styles.blog}>
-                {/* <p>{this.getEmailAddresses()}</p> */}
-                <p>{this.props.blogData.createdBy}</p>
-                {this.getEmailAddresses()}
-                <h4>Visited: {this.props.blogData.countryVisited}</h4>
-                <p>Thoughts: {this.props.blogData.post}</p>
+                <p>{this.state.blogData.email}</p>
+                <h4>Visited: {this.state.blogData.countryVisited}</h4>
+                <p>Thoughts: {this.state.blogData.post}</p>
             </article>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router, Redirect, globalHistory } from "@reach/router";
 import AboutPage from "../component/Main/AboutPage/AboutPage";
-import HomeLoginPage from "../component/Main/HomeLoginPage";
+import HomePage from "../component/Main/HomePage";
 import BlogsPage from "../component/Main/BlogsPage";
 import SearchPage from "../component/Main/SearchPage";
 import CreateNewBlogPost from "../component/Main/BlogsPage/CreateNewBlogPost";
@@ -82,7 +82,7 @@ export default class Routes extends Component {
         return(
             <Router>
                 <Redirect noThrow from="/" to="/home" />
-                <HomeLoginPage 
+                <HomePage 
                     path="/home"
                     email={this.state.email}
                     password={this.state.password}

@@ -14,7 +14,7 @@ export default class SearchPage extends Component {
         },
         fourSquare: {
             FSqBaseURL: "https://api.foursquare.com/v2/venues",
-            FSsearchLimit: "50",
+            FSsearchLimit: "10",
             FSclientID: "1UDUJRGAW503KCQO4VFBGGIRLVBGCWQZ0STNBEUWN4FITBAZ",
             FSclientSecret: "2JFKN3CQJYUJL35QINN1LLU0WO3ODJXHR5QALFTOMQ5D3VVY",
             FSversion: "20200229",
@@ -23,6 +23,8 @@ export default class SearchPage extends Component {
     }
     //push all categories into a SET and then display the different categories along the top - with the ability to filter by category
 
+
+    //go to docs = there will be something that goes into the URL that says put it into JSON
     fetchWeatherSearchResults = () => {
         let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${this.state.openWeather.openWeatherKey}`;
         fetch(weatherUrl)

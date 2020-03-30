@@ -1,12 +1,13 @@
 import React, {Component} from "react";
-import Button from "../../../Utilities/Button"
+import Button from "../../../../Utilities/Button"
 
 //regex to find the @'s and stuff
 
-export default class NotLoggedIn extends Component {
+export default class SignUp extends Component {
     render(){
         return(
             <div>
+                <h5>Sign up to view the sites content!</h5>
                 <input
                     type="email"
                     name="email"
@@ -28,7 +29,6 @@ export default class NotLoggedIn extends Component {
                 <small>Don't worry, we won't share your details.</small>
                 <br/>
                 <div>
-                    <Button text={'Login'} handleClick={this.props.login} />
                     <Button text={'Sign Up'} handleClick={this.props.signup} />
                 </div>
             </div>
