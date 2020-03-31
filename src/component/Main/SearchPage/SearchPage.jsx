@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import Header from "../../Utilities/Header";
 import SearchBar from "../../Utilities/SearchBar"
 import Weather from "./Weather";
@@ -14,7 +15,7 @@ export default class SearchPage extends Component {
         },
         fourSquare: {
             FSqBaseURL: "https://api.foursquare.com/v2/venues",
-            FSsearchLimit: "10",
+            FSsearchLimit: "20",
             FSclientID: "1UDUJRGAW503KCQO4VFBGGIRLVBGCWQZ0STNBEUWN4FITBAZ",
             FSclientSecret: "2JFKN3CQJYUJL35QINN1LLU0WO3ODJXHR5QALFTOMQ5D3VVY",
             FSversion: "20200229",
@@ -23,20 +24,22 @@ export default class SearchPage extends Component {
     }
     //push all categories into a SET and then display the different categories along the top - with the ability to filter by category
 
-
-    //go to docs = there will be something that goes into the URL that says put it into JSON
-    fetchWeatherSearchResults = () => {
+    requestWeatherSearchResults = async () => {
         let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${this.state.openWeather.openWeatherKey}`;
-        fetch(weatherUrl)
-            .then(response => response.json())
-            .then((weatherData) => {
-                this.setState({
-                    openWeather: {
-                        weatherData
-                    }
-                });
+        try {
+            const response = await axios.get(weatherUrl);
+            const weatherData = response.data;
+            this.setState({
+                openWeather: {
+                    ...this.state.openWeather,
+                    weatherData
+                }
             })
-            .catch(error => console.log(error));
+        }
+        catch(error){
+            console.log(error);
+        }
+        
     }
 
     fetchFourSquareData() {
@@ -47,6 +50,7 @@ export default class SearchPage extends Component {
                 let venueData = data.response.groups[0].items;
                 this.setState({
                     fourSquare: {
+                        ...this.state.fourSquare,
                         venueData
                     }
                 })
@@ -59,7 +63,7 @@ export default class SearchPage extends Component {
     }
 
     handleClick = () => {
-        this.fetchWeatherSearchResults();
+        this.requestWeatherSearchResults();
         this.fetchFourSquareData();
     }
 

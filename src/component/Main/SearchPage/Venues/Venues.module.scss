@@ -8,9 +8,8 @@
 }
 
 .venue {
-    height: 100px;
+    z-index: -1;
+    height: 140px;
     width: 250px;
-    border: 1px solid $mustard;
     margin: 5px 0;
-    padding: 5px;
 }

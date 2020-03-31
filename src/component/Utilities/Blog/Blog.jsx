@@ -1,6 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styles from "./Blog.module.scss";
 import { firestore } from "../../../firebase";
+import Card from 'react-bootstrap/Card';
 
 export default class Blog extends Component {
     state = {
@@ -10,27 +11,34 @@ export default class Blog extends Component {
     componentDidMount() {
         firestore
             .collection("users")
-            .where("uid","==",this.props.blogData.createdBy)
+            .where("uid", "==", this.props.blogData.createdBy)
             .get()
             .then((result) => {
                 const email = result.docs[0].data().email
-                this.setState({ 
+                this.setState({
                     blogData: {
                         ...this.props.blogData,
                         email
                     }
-                 })
+                })
             })
     }
 
-    render(){
-        //this.getEmailAddresses();
-        return(
-            <article className={styles.blog}>
-                <h4>{this.state.blogData.email}</h4>
-                <h4>Visited: {this.state.blogData.countryVisited}</h4>
-                <p>Thoughts: {this.state.blogData.post}</p>
-            </article>
+    render() {
+        return (
+            <Card
+                bg={'light'}
+                text={'dark'}
+                className={styles.blog}
+            >
+                <Card.Header>{this.state.blogData.email}</Card.Header>
+                <Card.Body>
+                    <Card.Title> {this.state.blogData.countryVisited} </Card.Title>
+                    <Card.Text>
+                        {this.state.blogData.post}
+              </Card.Text>
+                </Card.Body>
+            </Card>
         );
     }
 }
