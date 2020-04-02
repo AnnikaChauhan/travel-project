@@ -1,6 +1,12 @@
 @import "../../../variables.scss";
 
 .aboutPage {
+    ul {
+        li {
+            padding: 0 5px;
+        }
+    }
+
     a:hover {
         color: $mustard;
         text-decoration: none;
