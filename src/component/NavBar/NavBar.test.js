@@ -1,8 +1,15 @@
 import React from "react";
 import NavBar from "./NavBar";
 
-import Adapter from 'enzyme-adapter-react-15';
-import {mount} from "enzyme";
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+import { shallow, mount, render } from 'enzyme';
+
+// taken from https://enzymejs.github.io/enzyme/docs/installation/index.html as per error instructions - leave this for now incase you need it
+// const wrapper = shallow(<NavBar />);
 
 describe("Navbar", () => {
     let component;
