@@ -1,3 +1,19 @@
+# Explorer - Personal React App Project
+This was my personal project that I built entirely alone towards the end of the course. It is a React app with a Firebase backend - incorporating: react routing, state & props and reusable components, it also has a firebase authentication system, is attached to a firebase database (where the app can get data and can also post data too), it also connects to several APIs to return information to the user.
+
+This app was build in React. If you clone this repo down you will need to do a 'yarn install' in the terminal in order to install all of the related packages. You can then do a 'yarn start' to view a demo version of the app as you make changes.
+
+This app is available [here](https://travel-project-d6827.firebaseapp.com/home).
+
+Access the Trello board [here](https://trello.com/b/oYWDrEeS/travel-site) to see additional features that I intend to build in the future.
+
+## How to Use
+Note: There are instructions on the about page of the app too :)
+Log in or sign up to access the content. If you would just like access to the test account please get in touch by email or linkedIn.
+Click the blogs section to view yours and other peoples blogs.
+You can create your own blog posts by clicking the 'New Post' button.
+On the Explore page you can search any city worldwide to find out about the weather there and also see what the top attractions in that city are.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
