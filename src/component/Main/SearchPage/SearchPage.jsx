@@ -5,6 +5,9 @@ import SearchBar from "../../Utilities/SearchBar"
 import Weather from "./Weather";
 import Venues from "./Venues";
 
+// import * as functions from 'firebase-functions';
+// const foursquare = functions.config().foursquare;
+
 export default class SearchPage extends Component {
     state = {
         citySearch: "",
@@ -18,6 +21,8 @@ export default class SearchPage extends Component {
             FSsearchLimit: "20",
             FSclientID: "1UDUJRGAW503KCQO4VFBGGIRLVBGCWQZ0STNBEUWN4FITBAZ",
             FSclientSecret: "2JFKN3CQJYUJL35QINN1LLU0WO3ODJXHR5QALFTOMQ5D3VVY",
+            // FSclientID: foursquare.clientid,
+            // FSclientSecret: foursquare.clientsecret,
             FSversion: "20200229",
             venueData: []
         }
