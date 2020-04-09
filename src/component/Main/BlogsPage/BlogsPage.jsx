@@ -15,7 +15,7 @@ export default class BlogsPage extends Component {
         return(
             <section className={styles.blogsPage}>
                 <Header hOne={"Blogs by Explorers"} hTwo={"Read about other Explorer's travels, or write about your own!"} />
-                <hr/>
+                {/* <hr/> */}
                 <div>
                     <h3>Your Blogs</h3>
                     <Button text={'New Post'} handleClick={this.newPostButtonClick}/>
@@ -23,7 +23,7 @@ export default class BlogsPage extends Component {
                 <article>
                     <UserBlogs user={this.props.user} />
                 </article>
-                <hr/>
+                {/* <hr/> */}
                 <div>
                     <h3>Blogs by all Explorers</h3>
                 </div>
