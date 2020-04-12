@@ -1,7 +1,14 @@
 .blogsPage {
+
     div{
         display: flex;
         justify-content: space-between;
         padding-bottom: 10px;
+    }
+
+    article {
+        margin: 0 auto;
+        height: auto;
+        width: 99vw;
     }
 }
