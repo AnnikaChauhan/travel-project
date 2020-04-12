@@ -4,9 +4,15 @@ import Header from "../../Utilities/Header";
 import SearchBar from "../../Utilities/SearchBar"
 import Weather from "./Weather";
 import Venues from "./Venues";
+import firebase from "../../../firebase"; 
 
+// const firebase = require('firebase/app');
+// const functions = require('firebase/functions');
 // import * as functions from 'firebase-functions';
+// const functions = require('firebase-functions');
+// console.log(functions);
 // const foursquare = functions.config().foursquare;
+// console.log(foursquare);
 
 export default class SearchPage extends Component {
     state = {
@@ -29,7 +35,10 @@ export default class SearchPage extends Component {
     }
     //push all categories into a SET and then display the different categories along the top - with the ability to filter by category
 
+    //maybe push the entire URL through the back
     requestWeatherSearchResults = async () => {
+        // const key = firebase.functions().httpsCallable('getOpenWeatherID');
+        // console.log(key());
         let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${this.state.openWeather.openWeatherKey}`;
         try {
             const response = await axios.get(weatherUrl);
@@ -68,8 +77,10 @@ export default class SearchPage extends Component {
     }
 
     handleClick = () => {
+        // console.log('click');
         this.requestWeatherSearchResults();
         this.fetchFourSquareData();
+        // const function = firebase.functions().httpsCallable('name of function')
     }
 
     render() {
