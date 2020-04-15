@@ -25,8 +25,8 @@ export default class SearchPage extends Component {
         fourSquare: {
             FSqBaseURL: "https://api.foursquare.com/v2/venues",
             FSsearchLimit: "20",
-            FSclientID: "1UDUJRGAW503KCQO4VFBGGIRLVBGCWQZ0STNBEUWN4FITBAZ",
-            FSclientSecret: "2JFKN3CQJYUJL35QINN1LLU0WO3ODJXHR5QALFTOMQ5D3VVY",
+            FSclientID: process.env.REACT_APP_FOURSQUARE_ID,
+            FSclientSecret: process.env.REACT_APP_FOURSQUARE_SECRET,
             // FSclientID: foursquare.clientid,
             // FSclientSecret: foursquare.clientsecret,
             FSversion: "20200229",
@@ -39,8 +39,7 @@ export default class SearchPage extends Component {
     requestWeatherSearchResults = async () => {
         // const key = firebase.functions().httpsCallable('getOpenWeatherID');
         // key();
-        const key = process.env.REACT_APP_OPENWEATHER_KEY;
-        let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${key}`;
+        let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${this.state.openWeather.openWeatherKey}`;
         try {
             const response = await axios.get(weatherUrl);
             const weatherData = response.data;
