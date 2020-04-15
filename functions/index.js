@@ -16,5 +16,10 @@ exports.getFourSquareSecret = functions.https.onRequest(() => {
 })
 
 exports.getOpenWeatherID = functions.https.onRequest((request, response) => {
-    response.send(functions.config().openweather.key);
+    try {
+        response.send(functions.config().openweather.key);
+    }
+    catch(error){
+        console.log(error);
+    }
 })

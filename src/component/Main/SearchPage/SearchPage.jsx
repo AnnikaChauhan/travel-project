@@ -19,7 +19,7 @@ export default class SearchPage extends Component {
         citySearch: "",
         openWeather: {
             baseURL: "https://api.openweathermap.org/data/2.5/weather",
-            openWeatherKey: "c8aa04aa00788b5f3da95ebae6e238b7",
+            openWeatherKey: process.env.REACT_APP_OPENWEATHER_KEY,
             weatherData: ""
         },
         fourSquare: {
@@ -38,8 +38,9 @@ export default class SearchPage extends Component {
     //maybe push the entire URL through the back
     requestWeatherSearchResults = async () => {
         // const key = firebase.functions().httpsCallable('getOpenWeatherID');
-        // console.log(key());
-        let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${this.state.openWeather.openWeatherKey}`;
+        // key();
+        const key = process.env.REACT_APP_OPENWEATHER_KEY;
+        let weatherUrl = `${this.state.openWeather.baseURL}?q=${this.state.citySearch}&appid=${key}`;
         try {
             const response = await axios.get(weatherUrl);
             const weatherData = response.data;
@@ -84,7 +85,6 @@ export default class SearchPage extends Component {
     }
 
     render() {
-        //console.log(this.state.fourSquare.venueData);
         return (
             <section>
                 <Header hOne={'Search where to Explore'} hTwo={'Find the weather and local attractions in a city of your choice.'} />
