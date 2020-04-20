@@ -15,8 +15,6 @@ You can create your own blog posts by clicking the 'New Post' button.
 On the Explore page you can search any city worldwide to find out about the weather there and also see what the top attractions in that city are.
 
 ## **Important Notes**
-I am aware you cannot currently post additional blog posts, this is because something has changed in the firestore and I am working on a fix.
-
 I am aware that there seems to be a bug in the 'blogs' and 'explore' pages when you view on a Windows computer. This error does not occur on a Mac (where my code is produced) and I am unsure what is wrong at this stage. There is nothing visibly incorrect in the code. I have reviewed each component in turn and cannot find any issues. If the horizontal scroll appears halfway through the 'public blogs' section (or the search results), eliminating any of the blog posts underneath, you are able to see what components are visible underneath by selecting/highlighting all of the text. I have noticed that highlighting the text 'acts' as a sort of eraser. If you have any suggestions on how I can fix this bug please let me know!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
