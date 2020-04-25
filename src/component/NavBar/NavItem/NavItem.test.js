@@ -1,21 +1,36 @@
-// import React from "react";
-// import NavItem from "./NavItem";
+import React from "react";
+import NavItem from "./NavItem";
 
-// import { configure } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-// configure({ adapter: new Adapter() });
+configure({ adapter: new Adapter() });
 
-// import { shallow, mount, render } from 'enzyme';
+import { mount } from 'enzyme';
 
-// describe("NavItem", () => {
-//     let component;
+const mockData = {
+    name: "Home",
+    route: "/home"
+}
 
-//     beforeEach(() => {
-//         component = mount(<NavItem />);
-//     })
+describe("NavItem", () => {
+    let component;
 
-//     it("renders the naviations links to the navbar page", () => {
-//         expect(component.find("Link"));
-//     });
-// })
+    beforeEach(() => {
+        component = mount(
+            <NavItem
+                name={mockData.name}
+                route={mockData.route}
+            />
+        )
+    })
+
+    it("should receive the data passed in as props from the parent component", () => {
+        expect(component.props().name).toEqual(mockData.name);
+    })
+
+    it("should render the data passed in as props", () => {
+        expect(component.text()).toContain(mockData.name);
+    })
+
+})
