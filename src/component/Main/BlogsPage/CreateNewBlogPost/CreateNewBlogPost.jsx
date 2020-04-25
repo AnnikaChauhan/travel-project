@@ -52,6 +52,7 @@ export default class CreateNewBlogPost extends Component {
                     type="text"
                     placeholder="Your Blog Post"
                     name="post"
+                    id="post"
                     value={this.state.formData.name}
                     onChange={this.handleInputChange}
                 />
